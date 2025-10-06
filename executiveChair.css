@@ -1,23 +1,31 @@
-/* ================= PRODUCTS ================= */
+/* ================= PRODUCTSS ================= */
 #products {
-    padding: 40px 20px;
+    padding: 30px 15px; /* mobile ke liye thoda padding kam */
 }
 #products > h1 {
     color: var(--purple);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     text-align: center;
     font-weight: 600;
     margin-bottom: 30px;
 }
+#products .container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 240px);
+    grid-template-rows: auto;
+    justify-content: center;
+    gap: 20px;
+}
 #products .container .card {
-    border-radius: 8px;
-    border: 1px solid #d10e0e;
-    width: 100%;
-    max-width: 240px;
+    border-radius: 5px;
+    border: 1px solid rgb(209, 14, 14);
+    width: 240px;
     text-align: center;
     padding: 15px;
     min-height: 300px;
     background: #fff;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
 }
 #products .container .card .img {
     text-align: center;
@@ -32,42 +40,61 @@
     max-height: 100%;
 }
 #products .container .card .title {
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-align: center;
-    margin: 5px 0;
+    margin: 8px 0;
     font-weight: 800;
 }
 #products .container .card button {
-    width: 150px;
-    height: 35px;
+    width: 160px;
+    height: 38px;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 500;
     background-color: rgb(42, 170, 138);
     margin-top: 8px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
     color: #fff;
+    transition: 0.3s ease;
 }
 #products .container .card button:hover {
-    background-color: rgb(28, 140, 110);
+    background-color: rgb(34, 148, 120);
+    color: #fff;
 }
-#products .container {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-gap: 20px;
-    justify-items: center;
+
+/* ================= PRODUCTS RESPONSIVE ================= */
+@media screen and (min-width: 1200px) {
+    #products .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
 }
-#products .container .card .rating {
-    margin-top: 10px;
-    text-align: center;
+@media screen and (max-width: 1024px) {
+    #products .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
-#products .container .card .rating img {
-    width: 60%;
-    border: 2px solid var(--ccc);
-    padding: 5px;
-    border-radius: 3px;
+@media screen and (max-width: 768px) {
+    #products .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    #products .container .card {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 480px) {
+    #products .container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    #products .container .card {
+        width: 100%;
+    }
 }
 
 /* ================= HOME SECTION ================= */
@@ -75,9 +102,9 @@
     margin-top: 91px;
     background-image: url('images/home-img/Contactsofa.jpg');
     background-repeat: no-repeat;
-    background-size: cover;       
-    background-position: center;  
-    background-attachment: fixed; 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     height: 85vh;
     position: relative;
     display: flex;
@@ -86,7 +113,7 @@
     text-align: center;
 }
 
-/* overlay for text readability */
+/* overlay */
 #home::before {
     content: "";
     position: absolute;
@@ -100,44 +127,36 @@
 #home .container {
     position: relative;
     z-index: 2;
-    color: #fff;
-    padding: 0 15px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= HOME RESPONSIVE ================= */
 @media screen and (max-width: 1024px) {
     #home {
-        background-attachment: scroll; 
-        background-position: center top; 
+        background-attachment: scroll;
+        background-position: center top;
         height: 70vh;
     }
 }
 @media screen and (max-width: 768px) {
     #home {
-        background-attachment: scroll; 
+        background-attachment: scroll;
         background-size: cover;
-        background-position: center center; 
+        background-position: center center;
         height: 60vh;
     }
-    #products {
-        padding: 30px 15px;
-    }
-    #products > h1 {
-        font-size: 1.4rem;
+    #home .content p {
+        font-size: 1.2rem;
+        line-height: 1.4;
     }
 }
 @media screen and (max-width: 480px) {
     #home {
-        background-attachment: scroll; 
+        background-attachment: scroll;
         background-size: cover;
-        background-position: center bottom; 
+        background-position: center bottom;
         height: 55vh;
     }
-    #products .container .card {
-        max-width: 100%;
-        padding: 10px;
-    }
-    #products .container .card button {
-        width: 100%;
+    #home .content p {
+        font-size: 1rem;
     }
 }
