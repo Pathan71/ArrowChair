@@ -1,10 +1,10 @@
-/* ================= PRODUCTSS ================= */
+/* ================= PRODUCTS ================= */
 #products {
-    padding: 30px 15px; /* mobile ke liye thoda padding kam */
+    padding: 40px 20px;
 }
 #products > h1 {
     color: var(--purple);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
     font-weight: 600;
     margin-bottom: 30px;
@@ -12,15 +12,15 @@
 #products .container {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 240px);
-    grid-template-rows: auto;
-    justify-content: center;
+    grid-template-columns: repeat(4, 1fr); /* 🔥 4 chairs in a row */
     gap: 20px;
+    justify-items: center;
 }
 #products .container .card {
-    border-radius: 5px;
-    border: 1px solid rgb(209, 14, 14);
-    width: 240px;
+    border-radius: 8px;
+    border: 1px solid #d10e0e;
+    width: 100%;
+    max-width: 240px;
     text-align: center;
     padding: 15px;
     min-height: 300px;
@@ -40,7 +40,7 @@
     max-height: 100%;
 }
 #products .container .card .title {
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-align: center;
     margin: 8px 0;
     font-weight: 800;
@@ -49,11 +49,11 @@
     width: 160px;
     height: 38px;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
     background-color: rgb(42, 170, 138);
     margin-top: 8px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     color: #fff;
     transition: 0.3s ease;
@@ -62,37 +62,37 @@
     background-color: rgb(34, 148, 120);
     color: #fff;
 }
-
-/* ================= PRODUCTS RESPONSIVE ================= */
-@media screen and (min-width: 1200px) {
-    #products .container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
-    }
+#products .container .card .rating {
+    margin-top: 10px;
+    text-align: center;
 }
+#products .container .card .rating img {
+    width: 60%;
+    border: 2px solid var(--ccc);
+    padding: 5px;
+    border-radius: 3px;
+}
+
+/* ================= RESPONSIVE ================= */
 @media screen and (max-width: 1024px) {
     #products .container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Tablet pe 3 chairs */
     }
 }
 @media screen and (max-width: 768px) {
     #products .container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-    #products .container .card {
-        width: 100%;
+        grid-template-columns: repeat(2, 1fr); /* Mobile landscape pe 2 chairs */
     }
 }
 @media screen and (max-width: 480px) {
     #products .container {
-        grid-template-columns: 1fr;
-        gap: 15px;
+        grid-template-columns: 1fr; /* Small mobile pe 1 chair */
     }
     #products .container .card {
+        max-width: 100%;
+        padding: 12px;
+    }
+    #products .container .card button {
         width: 100%;
     }
 }
@@ -102,9 +102,9 @@
     margin-top: 91px;
     background-image: url('images/home-img/Contactsofa.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-size: cover;       
+    background-position: center;  
+    background-attachment: fixed; 
     height: 85vh;
     position: relative;
     display: flex;
@@ -113,7 +113,7 @@
     text-align: center;
 }
 
-/* overlay */
+/* overlay for text readability */
 #home::before {
     content: "";
     position: absolute;
@@ -127,21 +127,23 @@
 #home .container {
     position: relative;
     z-index: 2;
+    color: #fff;
+    padding: 0 15px;
 }
 
 /* ================= HOME RESPONSIVE ================= */
 @media screen and (max-width: 1024px) {
     #home {
-        background-attachment: scroll;
-        background-position: center top;
+        background-attachment: scroll; 
+        background-position: center top; 
         height: 70vh;
     }
 }
 @media screen and (max-width: 768px) {
     #home {
-        background-attachment: scroll;
+        background-attachment: scroll; 
         background-size: cover;
-        background-position: center center;
+        background-position: center center; 
         height: 60vh;
     }
     #home .content p {
@@ -151,9 +153,9 @@
 }
 @media screen and (max-width: 480px) {
     #home {
-        background-attachment: scroll;
+        background-attachment: scroll; 
         background-size: cover;
-        background-position: center bottom;
+        background-position: center bottom; 
         height: 55vh;
     }
     #home .content p {
