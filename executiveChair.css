@@ -1,21 +1,23 @@
 /* ================= PRODUCTS ================= */
 #products {
-    padding: 50px;
+    padding: 40px 20px;
 }
 #products > h1 {
     color: var(--purple);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
     font-weight: 600;
     margin-bottom: 30px;
 }
 #products .container .card {
-    border-radius: 5px;
-    border: 1px solid rgb(209, 14, 14);
-    width: 240px;
+    border-radius: 8px;
+    border: 1px solid #d10e0e;
+    width: 100%;
+    max-width: 240px;
     text-align: center;
     padding: 15px;
     min-height: 300px;
+    background: #fff;
 }
 #products .container .card .img {
     text-align: center;
@@ -30,7 +32,7 @@
     max-height: 100%;
 }
 #products .container .card .title {
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-align: center;
     margin: 5px 0;
     font-weight: 800;
@@ -38,56 +40,34 @@
 #products .container .card button {
     width: 150px;
     height: 35px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 600;
     background-color: rgb(42, 170, 138);
-    margin-top: 5px;
+    margin-top: 8px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    color: #fff;
 }
 #products .container .card button:hover {
-    background-color: rgb(236, 255, 220);
+    background-color: rgb(28, 140, 110);
 }
 #products .container {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 240px);
-    grid-template-rows: auto;
-    justify-content: center;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
 }
 #products .container .card .rating {
     margin-top: 10px;
     text-align: center;
 }
 #products .container .card .rating img {
-    width: 50%;
+    width: 60%;
     border: 2px solid var(--ccc);
     padding: 5px;
     border-radius: 3px;
-}
-
-/* ================= PRODUCTS RESPONSIVE ================= */
-@media screen and (min-width: 1200px) {
-    #products .container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
-    }
-}
-@media screen and (max-width: 900px) {
-    #products .container {
-        grid-template-columns: repeat(2, 240px);
-        grid-template-rows: repeat(3, auto);
-    }
-}
-@media screen and (max-width: 600px) {
-    #products .container {
-        grid-template-columns: 240px;
-        grid-template-rows: repeat(6, auto);
-    }
 }
 
 /* ================= HOME SECTION ================= */
@@ -95,9 +75,9 @@
     margin-top: 91px;
     background-image: url('images/home-img/Contactsofa.jpg');
     background-repeat: no-repeat;
-    background-size: cover;       /* image full area fill karega */
-    background-position: center;  /* desktop par center me */
-    background-attachment: fixed; /* desktop ke liye */
+    background-size: cover;       
+    background-position: center;  
+    background-attachment: fixed; 
     height: 85vh;
     position: relative;
     display: flex;
@@ -120,29 +100,44 @@
 #home .container {
     position: relative;
     z-index: 2;
+    color: #fff;
+    padding: 0 15px;
 }
 
-/* ================= HOME RESPONSIVE ================= */
+/* ================= RESPONSIVE ================= */
 @media screen and (max-width: 1024px) {
     #home {
-        background-attachment: scroll; /* mobile par smooth scroll */
+        background-attachment: scroll; 
         background-position: center top; 
         height: 70vh;
     }
 }
 @media screen and (max-width: 768px) {
     #home {
-        background-attachment: scroll; /* mobile par fixed hatao */
+        background-attachment: scroll; 
         background-size: cover;
         background-position: center center; 
         height: 60vh;
     }
+    #products {
+        padding: 30px 15px;
+    }
+    #products > h1 {
+        font-size: 1.4rem;
+    }
 }
 @media screen and (max-width: 480px) {
     #home {
-        background-attachment: scroll; /* mobile par fixed hatao */
+        background-attachment: scroll; 
         background-size: cover;
         background-position: center bottom; 
         height: 55vh;
+    }
+    #products .container .card {
+        max-width: 100%;
+        padding: 10px;
+    }
+    #products .container .card button {
+        width: 100%;
     }
 }
